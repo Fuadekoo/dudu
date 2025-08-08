@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@heroui/react";
-import key from "../public/l.png";
+import key from "../public/v3.png";
+import Logo from "../public/logo.png";
 import { useState, useEffect } from "react";
 function AnimatedText({
   words,
@@ -75,76 +76,75 @@ function AnimatedBlob() {
     </div>
   );
 }
-
 function Home() {
   return (
-    <div className="grid lg:grid-cols-2 max-lg:grid-rows-2 gap-1 ">
-      <div className="flex flex-col items-center justify-center py-8">
-        <div className="relative w-[200px] h-[200px]">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-100 grid lg:grid-cols-2 max-lg:grid-rows-2 gap-6 px-6 py-10">
+      <div className="flex flex-col items-center justify-center relative py-8">
+        <div className="relative w-[180px] h-[180px] mb-6 drop-shadow-xl">
           <Image
-            src="/logo.png"
+            src={key}
             alt="Logo"
             layout="fill"
             objectFit="contain"
-            className="z-10"
+            className="z-10 rounded-full border-4 border-emerald-200 bg-white"
           />
           <AnimatedBlob />
         </div>
         <Button
-          className="mt-6"
-          variant="ghost"
+          className="mt-4 px-8 py-3 rounded-full shadow-lg text-lg font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition"
+          variant="solid"
           color="primary"
           onClick={() => {
             window.location.href = "#contact";
           }}
         >
-          Contact Us
+          Hello, we are Prime Rentals
         </Button>
-        <h1 className="text-xl font-bold mt-1 text-secondary-900">
+        <h1 className="text-2xl font-extrabold mt-4 text-emerald-900 drop-shadow-sm text-center">
           <AnimatedText words={["Your prime choice for rental property!"]} />
         </h1>
-      </div>
-      <div className="grid place-items-center  p-1 text-secondary-900">
-        <div className="flex flex-col items-center w-full">
-          {/* <h1 className="text-2xl font-bold mb-4 text-white text-center">
-            Rent and Buy a Property in Addis Abeba
-          </h1> */}
-          <div className="grid grid-cols-1 gap-2">
-            <div className="grid items-center justify-center">
-              <Image
-                src={key}
-                alt="Key"
-                width={150}
-                height={90}
-                className="object-cover"
+        <div className="mt-6 text-lg font-medium text-emerald-800 bg-white/80 rounded-xl p-5 shadow-md max-w-xl text-center">
+          <p className="mb-4 text-emerald-700">
+            Prime rentals are high-quality, well-located properties with great
+            amenities, comfort, and convenience—ideal for both renters and
+            owners.
+          </p>
+          <h2 className="font-semibold text-emerald-900">
+            The services we provide:&nbsp;
+            <span className="text-emerald-600 font-bold">
+              <AnimatedText
+                words={[
+                  "House Sell",
+                  "House Rent",
+                  "Compound House Sell",
+                  "Compound House Rent",
+                  "Apartment Sell",
+                  "Apartment Rent",
+                  "Villa Sell",
+                  "Villa Rent",
+                  "Short-term Rental",
+                  "Long-term Rental",
+                ]}
+                infinite
               />
-            </div>
-            <div className="m-2">
-              <h1 className="">
-                The Service we provide is{" "}
-                <AnimatedText
-                  words={[
-                    "House Sell",
-                    "House Rent",
-                    "Compound house sell",
-                    "Compound house rent",
-                    "apartment sell",
-                    "apartment rent",
-                    "vila sell",
-                    "villa rent",
-                    "short-tert rental",
-                    "Long term rental",
-                  ]}
-                  infinite
-                />
-              </h1>
-              <p className="text-xl font-bold text-center text-secondary-900">
-                Prime rentals are high-quality, well-located properties with
-                great amenities, comfort, and convenience—ideal for both renters
-                and owners.
-              </p>
-            </div>
+            </span>
+          </h2>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center p-4">
+        <div className="bg-white/90 rounded-2xl shadow-lg p-8 flex flex-col items-center w-full max-w-md">
+          <div className="flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="Property"
+              width={200}
+              height={140}
+              className=""
+            />
           </div>
+          <h1 className="text-2xl font-bold mb-6 text-emerald-800 text-center">
+            Rent and Buy a Property in Addis Ababa
+          </h1>
         </div>
       </div>
     </div>

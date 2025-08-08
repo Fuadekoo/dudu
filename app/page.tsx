@@ -17,26 +17,23 @@ function Page() {
 
   return (
     <ScrollShadow>
-      <div className="grid grid-cols-1 gap-4 min-h-svh">
+      <div className="grid grid-cols-1 gap-4 min-h-dvh">
         {/* this is a navbar */}
         <div className="sticky top-0 z-10 p-0">
           <Navbar />
         </div>
         <main className="grid grid-cols-1 gap-4">
-          <div
-            ref={homeRef}
-            className="border-2 rounded h-[calc(100vh-4rem)] grid"
-          >
+          <div ref={homeRef} className=" grid">
             <Home />
           </div>
-          <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
+          <div className="grid">
             <About />
           </div>
-          <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
+          <div className="grid">
             <Contact />
           </div>
         </main>
-        <div className="border-2 rounded">
+        <div className="">
           <Footer />
         </div>
         {/* Scroll to top button */}
