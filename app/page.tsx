@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@heroui/react";
+import { ScrollShadow } from "@heroui/react";
 import React from "react";
 import Navbar from "@/components/navbar";
 import Home from "@/components/home";
@@ -9,19 +10,20 @@ import Footer from "@/components/footer";
 
 function page() {
   return (
-    <div className="grid grid-cols-1 gap-4 min-h-svh">
-      {/* this is a navbar */}
-      <div className="sticky top-0 z-10 p-0">
-        <Navbar />
-      </div>
-      <main className="grid grid-cols-1 gap-4">
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Home />
+    <ScrollShadow>
+      <div className="grid grid-cols-1 gap-4 min-h-svh">
+        {/* this is a navbar */}
+        <div className="sticky top-0 z-10 p-0">
+          <Navbar />
         </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <About />
-        </div>
-        {/* <div className="border-2 rounded h-[calc(100vh-4rem)]">
+        <main className="grid grid-cols-1 gap-4">
+          <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
+            <Home />
+          </div>
+          <div className="border-2 rounded h-[calc(100vh-4rem)]">
+            <About />
+          </div>
+          {/* <div className="border-2 rounded h-[calc(100vh-4rem)]">
           <Skills />
         </div>
         <div className="border-2 rounded h-[calc(100vh-4rem)]">
@@ -30,14 +32,15 @@ function page() {
         <div className="border-2 rounded h-[calc(100vh-4rem)]">
           <Testimonial />
         </div> */}
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Contact />
+          <div className="border-2 rounded h-[calc(100vh-4rem)]">
+            <Contact />
+          </div>
+        </main>
+        <div className="border-2 rounded">
+          <Footer />
         </div>
-      </main>
-      <div className="border-2 rounded">
-        <Footer />
       </div>
-    </div>
+    </ScrollShadow>
   );
 }
 
