@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import { Handshake, HandCoins, Home } from "lucide-react";
 
 function About() {
   return (
     <div
-      id="services"
+      id="about"
       className="bg-gradient-to-br from-green-50 via-white to-emerald-100"
     >
       <div className="container mx-auto px-6">

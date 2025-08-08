@@ -17,11 +17,11 @@ function AnimatedText({
   const [forward, setForward] = useState(true);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    // const interval: NodeJS.Timeout;
 
     const currentWord = words[wordIndex];
 
-    interval = setInterval(() => {
+    const interval = setInterval(() => {
       if (forward) {
         setDisplayed(currentWord.slice(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
@@ -78,7 +78,10 @@ function AnimatedBlob() {
 }
 function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-100 grid lg:grid-cols-2 max-lg:grid-rows-2 gap-6 px-6 py-10">
+    <div
+      id="home"
+      className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-100 grid lg:grid-cols-2 max-lg:grid-rows-2 gap-6 px-6 py-10"
+    >
       <div className="flex flex-col items-center justify-center relative py-8">
         <div className="relative w-[180px] h-[180px] mb-6 drop-shadow-xl">
           <Image
@@ -135,7 +138,7 @@ function Home() {
         <div className="bg-white/90 rounded-2xl shadow-lg p-8 flex flex-col items-center w-full max-w-md">
           <div className="flex items-center justify-center">
             <Image
-              src="/logo.png"
+              src={Logo}
               alt="Property"
               width={200}
               height={140}

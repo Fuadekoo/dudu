@@ -12,7 +12,10 @@ import Link from "next/link";
 
 function Contact() {
   return (
-    <div className="grid lg:grid-cols-2 gap-6 p-6 max-w-4xl mx-auto bg-white/90 rounded-xl shadow-lg bg-gradient-to-br from-green-50 via-white to-emerald-100">
+    <div
+      id="contact"
+      className="grid lg:grid-cols-2 gap-6 p-6 max-w-4xl mx-auto bg-white/90 rounded-xl shadow-lg bg-gradient-to-br from-green-50 via-white to-emerald-100"
+    >
       {/* Social Media Section */}
       <div className="flex flex-col items-center justify-center p-6 space-y-4">
         <Image
@@ -75,6 +78,37 @@ function Contact() {
           >
             <Image src={telegram} alt="Telegram" width={40} height={40} />
           </Link>
+        </div>
+      </div>
+      <div className="flex flex-col items-start justify-center p-6 w-full">
+        <div className=" p-5 w-full space-y-5">
+          <h3 className="text-2xl font-semibold text-emerald-800 mb-2">
+            Get in Touch
+          </h3>
+          <div className="space-y-3">
+            <div className="flex items-center space-x-2">
+              <span className="text-gray-700 font-medium">Email:</span>
+              <a
+                href="mailto:primeplcaddis@gmail.com"
+                className="text-emerald-600 hover:underline"
+              >
+                natnaelyohannes1212@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-gray-700 font-medium">Phone:</span>
+              <a
+                href="tel:+251911234567"
+                className="text-emerald-600 hover:underline"
+              >
+                +2519-33571691
+              </a>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-gray-700 font-medium">Address:</span>
+              <span className="text-gray-600"> Addis Ababa, Ethiopia</span>
+            </div>
+          </div>
         </div>
       </div>
       {/* Scan Section */}

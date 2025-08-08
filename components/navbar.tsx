@@ -1,6 +1,7 @@
 import { Navbar, NavbarBrand, NavbarContent, Button } from "@heroui/react";
 import Image from "next/image";
 import Logo from "../public/logo.png";
+import Link from "next/link";
 
 export default function AppNavbar() {
   return (
@@ -9,8 +10,8 @@ export default function AppNavbar() {
         <Image src={Logo} alt="Logo" width={36} height={36} />
       </NavbarBrand>
       <NavbarContent justify="end">
-        <Button color="primary" variant="flat">
-          Sign Up
+        <Button as={Link} href="#contact" color="primary" variant="flat">
+          contact us
         </Button>
       </NavbarContent>
     </Navbar>
