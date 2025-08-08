@@ -20,7 +20,7 @@ function page() {
           <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
             <Home />
           </div>
-          <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
             <About />
           </div>
           {/* <div className="border-2 rounded h-[calc(100vh-4rem)]">
@@ -32,7 +32,7 @@ function page() {
         <div className="border-2 rounded h-[calc(100vh-4rem)]">
           <Testimonial />
         </div> */}
-          <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
             <Contact />
           </div>
         </main>
