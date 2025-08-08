@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@heroui/react";
-// import AddisAbeba from "../public/addis1.jpg";
-import Addisabeba2 from "../public/key.jpg";
+import key from "../public/l.png";
 import { useState, useEffect } from "react";
 function AnimatedText({
   words,
@@ -57,21 +56,40 @@ function AnimatedText({
   return <span>{displayed}</span>;
 }
 
-function animateBackground() {
-  const colors = ["#FF5733", "#33FF57", "#3357FF"];
-  let currentIndex = 0;
-
-  setInterval(() => {
-    document.body.style.backgroundColor = colors[currentIndex];
-    currentIndex = (currentIndex + 1) % colors.length;
-  }, 2000);
+function AnimatedBlob() {
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden">
+      <svg
+        className="w-full h-full animate-pulse"
+        viewBox="0 0 800 600"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g transform="translate(300,300)">
+          <path
+            d="M120,-150C160,-120,200,-80,210,-30C220,20,200,80,160,120C120,160,60,180,10,170C-40,160,-80,120,-120,80C-160,40,-200,0,-190,-40C-180,-80,-120,-120,-80,-160C-40,-200,40,-180,120,-150Z"
+            fill="#0f4c3a"
+            opacity="0.6"
+          />
+        </g>
+      </svg>
+    </div>
+  );
 }
 
 function Home() {
   return (
     <div className="grid lg:grid-cols-2 max-lg:grid-rows-2 gap-1 ">
       <div className="flex flex-col items-center justify-center py-8">
-        <Image src="/logo.png" alt="" width={200} height={200} />
+        <div className="relative w-[200px] h-[200px]">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            layout="fill"
+            objectFit="contain"
+            className="z-10"
+          />
+          <AnimatedBlob />
+        </div>
         <Button
           className="mt-6"
           variant="ghost"
@@ -82,7 +100,9 @@ function Home() {
         >
           Contact Us
         </Button>
-        <AnimatedText words={["Your prime choice for rental property!"]} />
+        <h1 className="text-xl font-bold mt-1 text-secondary-900">
+          <AnimatedText words={["Your prime choice for rental property!"]} />
+        </h1>
       </div>
       <div className="grid place-items-center  p-1 text-secondary-900">
         <div className="flex flex-col items-center w-full">
@@ -90,28 +110,39 @@ function Home() {
             Rent and Buy a Property in Addis Abeba
           </h1> */}
           <div className="grid grid-cols-1 gap-2">
-            <div className="grid items-center">
+            <div className="grid items-center justify-center">
               <Image
-                src={Addisabeba2}
-                alt="Addis Abeba 2"
+                src={key}
+                alt="Key"
                 width={150}
                 height={90}
                 className="object-cover"
               />
             </div>
-            <div>
-              <p className="text-center text-secondary-900">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Inventore obcaecati blanditiis laudantium. Aliquid fuga adipisci
-                aut ipsam, corporis consectetur suscipit esse rerum, natus quia
-                possimus placeat dignissimos totam necessitatibus cum!
-              </p>
-              <h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                <span>
-                  <AnimatedText words={["Sell", "rent"]} infinite />
-                </span>
+            <div className="m-2">
+              <h1 className="">
+                The Service we provide is{" "}
+                <AnimatedText
+                  words={[
+                    "House Sell",
+                    "House Rent",
+                    "Compound house sell",
+                    "Compound house rent",
+                    "apartment sell",
+                    "apartment rent",
+                    "vila sell",
+                    "villa rent",
+                    "short-tert rental",
+                    "Long term rental",
+                  ]}
+                  infinite
+                />
               </h1>
+              <p className="text-xl font-bold text-center text-secondary-900">
+                Prime rentals are high-quality, well-located properties with
+                great amenities, comfort, and convenience—ideal for both renters
+                and owners.
+              </p>
             </div>
           </div>
         </div>

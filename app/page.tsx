@@ -1,14 +1,20 @@
 "use client";
 import { Button } from "@heroui/react";
 import { ScrollShadow } from "@heroui/react";
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "@/components/navbar";
 import Home from "@/components/home";
 import Contact from "@/components/contact";
 import About from "@/components/about";
 import Footer from "@/components/footer";
 
-function page() {
+function Page() {
+  const homeRef = useRef<HTMLDivElement>(null);
+
+  const scrollToHome = () => {
+    homeRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <ScrollShadow>
       <div className="grid grid-cols-1 gap-4 min-h-svh">
@@ -17,21 +23,15 @@ function page() {
           <Navbar />
         </div>
         <main className="grid grid-cols-1 gap-4">
-          <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
+          <div
+            ref={homeRef}
+            className="border-2 rounded h-[calc(100vh-4rem)] grid"
+          >
             <Home />
           </div>
           <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
             <About />
           </div>
-          {/* <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Skills />
-        </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Work />
-        </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Testimonial />
-        </div> */}
           <div className="border-2 rounded h-[calc(100vh-4rem)] grid">
             <Contact />
           </div>
@@ -39,9 +39,29 @@ function page() {
         <div className="border-2 rounded">
           <Footer />
         </div>
+        {/* Scroll to top button */}
+        <button
+          onClick={scrollToHome}
+          className="fixed bottom-8 right-8 bg-primary rounded-full shadow-lg p-2 z-50 animate-bounce"
+          aria-label="Scroll to top"
+        >
+          <svg
+            className="size-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 15l-7-7-7 7"
+            />
+          </svg>
+        </button>
       </div>
     </ScrollShadow>
   );
 }
 
-export default page;
+export default Page;
