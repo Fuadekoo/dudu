@@ -26,7 +26,7 @@ function BusinessCard() {
         />
         {/* Avatar: half in cover, half below */}
         <div className="absolute left-1/2 bottom-0 z-20 transform -translate-x-1/2 translate-y-1/2">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-sm border-4 border-red-700 overflow-hidden shadow-lg bg-white">
+          <div className="w-28 h-28 md:w-32 md:h-36 rounded-sm border-4  overflow-hidden shadow-lg bg-white">
             <Image
               src="/logo.png"
               alt="Profile Avatar"
@@ -39,12 +39,11 @@ function BusinessCard() {
       </div>
       {/* Remove spacer and add padding top to next section */}
       <div className="justify-center items-center flex flex-col pt-16 md:pt-20">
-        <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-primary-900 mb-2">
           Prime Rentals
         </h1>
-        <p className="text-sm md:text-base text-white mb-4 text-center">
-          Discover and book top-quality rental properties with Prime Rentals.
-          Find your next home or vacation stay easily and securely.
+        <p className="text-base md:text-lg text-primary-800 mb-4 text-center">
+          Your prime choice for rental property!
         </p>
         <div className="grid grid-cols-1 gap-3">
           <Link
@@ -54,7 +53,9 @@ function BusinessCard() {
             className="flex items-center space-x-2 hover:scale-110 transition-transform"
           >
             <Image src={Insta} alt="Instagram" width={40} height={40} />
-            <span className="text-white font-medium">Instagram</span>
+            <span className="text-primary-700 font-semibold text-base">
+              Instagram
+            </span>
           </Link>
           <Link
             href="https://www.tiktok.com/@prime_rental?_t=ZM-8ygWMSDW7jp&_r=1"
@@ -63,7 +64,9 @@ function BusinessCard() {
             className="flex items-center space-x-2 hover:scale-110 transition-transform"
           >
             <Image src={Tiktok} alt="TikTok" width={40} height={40} />
-            <span className="text-white font-medium">TikTok</span>
+            <span className="text-primary-700 font-semibold text-base">
+              TikTok
+            </span>
           </Link>
           <Link
             href="https://youtube.com/@primeplc?si=cev2DQIr7IlXU6v0"
@@ -72,7 +75,9 @@ function BusinessCard() {
             className="flex items-center space-x-2 hover:scale-110 transition-transform"
           >
             <Image src={Youtube} alt="YouTube" width={40} height={40} />
-            <span className="text-white font-medium">YouTube</span>
+            <span className="text-primary-700 font-semibold text-base">
+              YouTube
+            </span>
           </Link>
           <Link
             href="https://primeaddis.com/"
@@ -81,7 +86,9 @@ function BusinessCard() {
             className="flex items-center space-x-2 hover:scale-110 transition-transform"
           >
             <Image src={Website} alt="Website" width={40} height={40} />
-            <span className="text-white font-medium">Website</span>
+            <span className="text-primary-700 font-semibold text-base">
+              Website
+            </span>
           </Link>
           <Link
             href="https://wa.me/qr/XFZIVZ2X5SKWF1"
@@ -90,7 +97,9 @@ function BusinessCard() {
             className="flex items-center space-x-2 hover:scale-110 transition-transform"
           >
             <Image src={whatsapp} alt="WhatsApp" width={40} height={40} />
-            <span className="text-white font-medium">WhatsApp</span>
+            <span className="text-primary-700 font-semibold text-base">
+              WhatsApp
+            </span>
           </Link>
           <Link
             href="https://t.me/Rental_house"
@@ -99,20 +108,21 @@ function BusinessCard() {
             className="flex items-center space-x-2 hover:scale-110 transition-transform"
           >
             <Image src={telegram} alt="Telegram" width={40} height={40} />
-            <span className="text-white font-medium">Telegram</span>
+            <span className="text-primary-700 font-semibold text-base">
+              Telegram
+            </span>
           </Link>
         </div>
       </div>
       <div className="flex justify-center mt-6">
         <Button
-          variant="ghost"
+          variant="solid"
           color="primary"
           as="a"
-          href="/prime_rental_contact.vcf"
-          download
-          className=" font-semibold px-6 py-2 rounded shadow hover:bg-amber-100 transition"
+          href="tel:+251933571691"
+          className="font-semibold px-6 py-2 rounded-3xl shadow hover:bg-primary-100 transition text-primary-900 "
         >
-          Save Contact
+          Call +2519-33571691
         </Button>
       </div>
     </div>
